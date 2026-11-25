@@ -1,8 +1,11 @@
-# Kör alla tester (mvn test) automatiskt vid varje push och pull request.
-# Resultatet syns som en grön bock eller ett rött kryss vid commiten på GitHub.
+# Ersätter jsoups egna arbetsflöden (build.yml, codeql.yml, cifuzz.yml) i forken.
+# Kör alla tester vid push till main och för varje pull request.
 name: Tester
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
   test:
